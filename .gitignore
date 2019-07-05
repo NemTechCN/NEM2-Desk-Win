@@ -1,0 +1,10 @@
+.DS_Store
+
+node_modules
+.idea
+
+.vscode
+
+/mac_Client
+/win32_Client
+/linux_Client

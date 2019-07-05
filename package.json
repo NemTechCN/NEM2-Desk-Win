@@ -1,0 +1,28 @@
+{
+  "name": "nem2_desk_wallet_cn",
+  "version": "1.0.0",
+  "description": "Nem2_Desk_Wallet_Cn",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "packMac": "electron-packager . Nem2_Desk_Wallet_Cn --platform=darwin --arch=x64 --out ./mac_Client  --app-version=0.0.1 --electron-version=5.0.6",
+    "packWin32": "electron-packager . Nem2_Desk_Wallet_Cn --platform=win32 --arch=x64 --out ./win32_Client  --app-version=0.0.1 --electron-version=5.0.6",
+    "packLinux": "electron-packager . Nem2_Desk_Wallet_Cn --platform=linux --arch=x64 --out ./linux_Client  --app-version=0.0.1 --electron-version=5.0.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NemTechCN/NEM2_Desk_Wallet_CN.git"
+  },
+  "author": "Nemcn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NemTechCN/NEM2_Desk_Wallet_CN/issues"
+  },
+  "homepage": "https://github.com/NemTechCN/NEM2_Desk_Wallet_CN#readme",
+  "devDependencies": {
+    "electron": "^5.0.6"
+  },
+  "dependencies": {
+    "electron-packager": "^14.0.1"
+  }
+}
