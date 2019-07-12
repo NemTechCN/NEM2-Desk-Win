@@ -34,15 +34,17 @@ function initialize () {
 
     function createWindow () {
         const windowOptions = {
-            width: 960,
-            minWidth: 800,
-            height: 540,
-            minHeight: 450,
+            width: 1366,
+            minWidth: 1366,
+            height: 768,
+            minHeight: 768,
             title: app.getName(),
             webPreferences: {
                 nodeIntegration: true
             },
-            frame:false
+			titleBarStyle: 'hidden',
+            frame:false,
+			resizable: true
         }
         if (process.platform === 'linux') {
             windowOptions.icon = path.join(__dirname, '/assets/app-icon/png/512.png')
