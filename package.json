@@ -5,9 +5,9 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "packMac": "electron-packager . Nem2_Desk_Wallet_Cn --platform=darwin --arch=x64 --out ./mac_Client  --app-version=0.0.1 --electron-version=5.0.6",
-    "packWin32": "electron-packager . Nem2_Desk_Wallet_Cn --platform=win32 --arch=x64 --out ./win32_Client  --app-version=0.0.1 --electron-version=5.0.6",
-    "packLinux": "electron-packager . Nem2_Desk_Wallet_Cn --platform=linux --arch=x64 --out ./linux_Client  --app-version=0.0.1 --electron-version=5.0.6"
+    "packMac": "electron-packager ./ Nem2_Desk_Wallet_Cn --platform=darwin --asar --arch=x64 --out ./mac_Client  --app-version=0.0.1   --overwrite   --ignore=\"(dist|src|docs|.gitignore|LICENSE|README.md|webpack.config*|node_modules)\"",
+    "packWin32": "electron-packager ./ Nem2_Desk_Wallet_Cn --platform=win32 --asar --arch=x64 --out ./win32_Client  --app-version=0.0.1 --overwrite  --ignore=\"(dist|src|docs|.gitignore|LICENSE|README.md|webpack.config*|node_modules)\"",
+    "packLinux": "electron-packager ./ Nem2_Desk_Wallet_Cn --platform=linux --asar --arch=x64 --out ./linux_Client  --app-version=0.0.1 --overwrite  --ignore=\"(dist|src|docs|.gitignore|LICENSE|README.md|webpack.config*|node_modules)\""
   },
   "repository": {
     "type": "git",
@@ -22,5 +22,6 @@
   "devDependencies": {
     "electron": "^5.0.6",
     "electron-packager": "^14.0.1"
-  }
+  },
+  "dependencies": {}
 }
