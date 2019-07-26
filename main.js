@@ -7,7 +7,7 @@ const {app, BrowserWindow, ipcMain} = require('electron')
 
 const debug = /--debug/.test(process.argv[2])
 
-if (process.mas) app.setName('Nem2_Desk_Wallet_Cn')
+if (process.mas) app.setName('·')
 
 let mainWindow = null
 
@@ -36,20 +36,21 @@ function initialize () {
         const windowOptions = {
             width: 1366,
             minWidth: 1366,
-            height: 768,
-            minHeight: 768,
+            height: 800,
+            minHeight: 800,
             title: app.getName(),
             webPreferences: {
                 nodeIntegration: true
             },
 			titleBarStyle: 'hidden',
+			autoHideMenuBar:true,
             frame:false,
-			resizable: true
+			resizable: false
         }
         if (process.platform === 'linux') {
             windowOptions.icon = path.join(__dirname, '/assets/app-icon/png/512.png')
         } else {
-            windowOptions.icon = path.join(__dirname, 'assets/app-icon/png/512.png')
+            windowOptions.icon = path.join(__dirname, './logo.png')
         }
 
         mainWindow = new BrowserWindow(windowOptions)
