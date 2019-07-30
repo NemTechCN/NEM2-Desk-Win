@@ -3,6 +3,7 @@
 // })
 
 const path = require('path')
+const electron = require('electron')
 const {app, BrowserWindow, ipcMain} = require('electron')
 
 const debug = /--debug/.test(process.argv[2])
@@ -33,11 +34,15 @@ function initialize () {
     makeSingleInstance()
 
     function createWindow () {
+		let size = electron.screen.getPrimaryDisplay().workAreaSize
+		let width = parseInt(size.width * 0.71)
+		let height = parseInt(width / (1920/1080))
+
         const windowOptions = {
-            width: 1366,
-            minWidth: 1366,
-            height: 800,
-            minHeight: 800,
+            width: width,
+            minWidth: width,
+            height: height,
+            minHeight: height,
             title: app.getName(),
             webPreferences: {
                 nodeIntegration: true
