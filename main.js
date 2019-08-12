@@ -36,7 +36,7 @@ function initialize () {
     function createWindow () {
 		let size = electron.screen.getPrimaryDisplay().workAreaSize
 		let width = parseInt(size.width * 0.71)
-		let height = parseInt(width / (1920/1080))
+		let height = parseInt(width / (1920/1100))
 
         const windowOptions = {
             width: width,
@@ -50,7 +50,7 @@ function initialize () {
 			titleBarStyle: 'hidden',
 			autoHideMenuBar:true,
             frame:false,
-			resizable: false
+			resizable: true
         }
         if (process.platform === 'linux') {
             windowOptions.icon = path.join(__dirname, '/assets/app-icon/png/512.png')
@@ -67,10 +67,13 @@ function initialize () {
             mainWindow.maximize()
             require('devtron').install()
         }
-
-        mainWindow.on('closed', () => {
+		mainWindow.once('ready-to-show', () => {
+			mainWindow.show()
+		})
+        mainWindow.on('closed',() => {
             mainWindow = null
         })
+
     }
 
     app.on('ready', () => {
